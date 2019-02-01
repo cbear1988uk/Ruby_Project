@@ -14,3 +14,8 @@ get '/animals/' do
   @animals = Animal.find_all()
   erb(:animals)
 end
+
+get '/animals/:id/' do
+  @animals = Animal.find_by_id(params[:id])
+  erb(:'animals/show')
+end

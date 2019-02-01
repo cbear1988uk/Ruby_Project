@@ -59,12 +59,4 @@ class Animal
     return Animal.new(result) if result
   end
 
-  def self.find_by_admission_date(admission_date)
-    sql = "SELECT * FROM animals WHERE admission_date = $1"
-    values = [admission_date]
-    result = SqlRunner.run(sql, values).first
-    return Animal.new(result) if result
-  end
-
-
 end
