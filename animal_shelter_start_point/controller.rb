@@ -15,7 +15,11 @@ get '/animals/' do
   erb(:animals)
 end
 
-get '/animals/:id/' do
+get '/animals/:id' do
   @animals = Animal.find_by_id(params[:id])
-  erb(:'animals/show')
+  erb(:show_animal)
+end
+
+get '/donate_pet/' do
+  erb(:new)
 end
