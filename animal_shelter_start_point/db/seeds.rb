@@ -1,28 +1,30 @@
-require_relative('../models/owner.rb')
-require_relative('../models/student.rb')
+require_relative('../models/owner')
+require_relative('../models/animal')
+require_relative('../models/adoptions')
 
 require('pry')
 
+Adoption.delete_all()
 Owner.delete_all()
 Animal.delete_all()
 
+
+#OWNERS
+
 owner1 = Owner.new(
-  {'first_name' => 'Ryan', 'last_name' => 'Taubert', 'pet' => pet1.name,
-  'animal_id' => pet1.id}
+  {'first_name' => 'Ryan', 'last_name' => 'Taubert'}
 )
 
 owner1.save()
 
 owner2 = Owner.new(
-  {'first_name' => 'Collin', 'last_name' => 'Bull', 'pet' => pet2.name,
-  'animal_id' => pet2.id}
+  {'first_name' => 'Collin', 'last_name' => 'Bull'}
 )
 
 owner2.save()
 
 owner3 = Owner.new(
-  {'first_name' => 'Benjamin', 'last_name' => 'Mead', 'pet' => pet3.name,
-  'animal_id' => pet3.id}
+  {'first_name' => 'Benjamin', 'last_name' => 'Mead'}
 )
 
 owner3.save()
@@ -63,3 +65,25 @@ pet5 = Animal.new(
 )
 
 pet5.save()
+
+adoption1 = Adoption.new(
+  {'animal_id' => pet1.id, 'owner_id' => owner1.id}
+)
+
+adoption1.save()
+
+adoption2 = Adoption.new(
+  {'animal_id' => pet2.id, 'owner_id' => owner2.id}
+)
+
+adoption2.save()
+
+adoption3 = Adoption.new(
+  {'animal_id' => pet3.id, 'owner_id' => owner3.id}
+)
+
+adoption3.save()
+
+binding.pry
+
+nil

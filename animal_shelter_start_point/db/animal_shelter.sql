@@ -6,8 +6,7 @@ DROP TABLE IF EXISTS animals;
 CREATE TABLE owners (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255),
-  last_name VARCHAR(255),
-  pet VARCHAR(255)
+  last_name VARCHAR(255)
 );
 
 CREATE TABLE animals (
@@ -17,7 +16,7 @@ CREATE TABLE animals (
   breed VARCHAR(255),
   age VARCHAR(255),
   status VARCHAR(255),
-  owner VARCHAR(255),
+  owner_id INT4,
   admission_date VARCHAR(255)
 );
 

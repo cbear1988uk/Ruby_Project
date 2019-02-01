@@ -10,8 +10,6 @@ attr_accessor :first_name, :last_name, :pet, :animal_id
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @pet = options['pet']
-    @animal_id = options['animal_id'].to_i
   end
 
   def save()
@@ -19,13 +17,13 @@ attr_accessor :first_name, :last_name, :pet, :animal_id
     VALUES ($1, $2, $3, $4) RETURN id"
     values = [@first_name, @last_name, @pet, @animal_id]
     result = SqlRunner.run(sql, values)
-    @id = result[0]['id']
+    @id = result[0]['id'].to_i
   end
 
   def update()
     sql = "UPDATE owners SET (first_name, last_name, pet, animal_id)
     = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@first_name, @last_name, @pet, @animal_id]
+    values = [@first_name, @last_name, @pet, @animal_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -42,7 +40,7 @@ attr_accessor :first_name, :last_name, :pet, :animal_id
 
   def self.find_all()
     sql = "SELECT * FROM owners"
-    result = SqlRunn.run(sql)
+    result = SqlRunner.run(sql)
     owners = result.map{ |owner_data| Owner.new(owner_data)}
     return owners
   end

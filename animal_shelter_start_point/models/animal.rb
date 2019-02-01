@@ -14,7 +14,6 @@ class Animal
     @breed = options['breed']
     @age = options['age']
     @status = options['status']
-    @owner = options['owner']
     @admission_date = options['admission_date']
     @owner_id = options['owner_id'].to_i
   end
@@ -33,7 +32,7 @@ class Animal
     sql = "UPDATE animals SET (name, type, breed, age, status, owner,
     admission_date, owner_id) = WHERE id = $9"
     values = [@name, @type, @breed, @age, @status, @owner, @admission_date,
-      @owner_id]
+      @owner_id, @id]
     SqlRunner.run(sql, values)
   end
 
