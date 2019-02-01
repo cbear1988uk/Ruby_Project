@@ -23,3 +23,13 @@ end
 get '/donate_pet/' do
   erb(:new)
 end
+
+get '/adopt_pet/' do
+  erb(:adopt)
+end
+
+post '/animals/' do
+  animals = Animal.new(params)
+  animals.save()
+  redirect '/animals/'
+end
