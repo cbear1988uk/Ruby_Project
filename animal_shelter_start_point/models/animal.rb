@@ -38,14 +38,29 @@ class Animal
   end
 
   def self.delete_all()
-    sql = "DELETE FROM students"
+    sql = "DELETE FROM animals"
     SqlRunner.run(sql)
   end
 
   def delete()
-    sql = "DELETE FROM students WHERE id = $1"
+    sql = "DELETE FROM animals WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+  def self.find_all()
+    sql = "SELECT * FROM animals"
+    result = SqlRunner.run(sql)
+    animals = result.map{ |animal_data| Animal.new(animal_data)}
+    return animals
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM animals WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    return Animal.new(result) if result
+  end
+
 
 end

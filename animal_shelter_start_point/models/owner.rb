@@ -40,4 +40,20 @@ attr_accessor :first_name, :last_name, :pet, :animal_id
     SqlRunner.run(sql, values)
   end
 
+  def self.find_all()
+    sql = "SELECT * FROM owners"
+    result = SqlRunn.run(sql)
+    owners = result.map{ |owner_data| Owner.new(owner_data)}
+    return owners
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    return Owner.new(result) if result
+  end
+
+
+
 end
