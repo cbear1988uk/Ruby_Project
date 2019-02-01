@@ -13,17 +13,17 @@ attr_accessor :first_name, :last_name, :pet, :animal_id
   end
 
   def save()
-    sql = "INSERT INTO owners (first_name, last_name, pet, animal_id)
-    VALUES ($1, $2, $3, $4) RETURN id"
-    values = [@first_name, @last_name, @pet, @animal_id]
+    sql = "INSERT INTO owners (first_name, last_name)
+    VALUES ($1, $2) RETURNING id"
+    values = [@first_name, @last_name]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
 
   def update()
-    sql = "UPDATE owners SET (first_name, last_name, pet, animal_id)
-    = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@first_name, @last_name, @pet, @animal_id, @id]
+    sql = "UPDATE owners SET (first_name, last_name)
+    = ($1, $2) WHERE id = $3"
+    values = [@first_name, @last_name]
     SqlRunner.run(sql, values)
   end
 

@@ -19,20 +19,18 @@ class Animal
   end
 
   def save()
-    sql = "INSERT INTO animals (name, type, breed, age, status, owner,
-    admission_date, owner_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+    sql = "INSERT INTO animals (name, type, breed, age, status,
+    admission_date, owner_id) VALUES ($1, $2, $3, $4, $5, $6, $7)
     RETURNING id"
-    values = [@name, @type, @breed, @age, @status, @owner,
-      @admission_date, @owner_id]
+    values = [@name, @type, @breed, @age, @status, @admission_date, @owner_id]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id']
   end
 
   def update()
-    sql = "UPDATE animals SET (name, type, breed, age, status, owner,
-    admission_date, owner_id) = WHERE id = $9"
-    values = [@name, @type, @breed, @age, @status, @owner, @admission_date,
-      @owner_id, @id]
+    sql = "UPDATE animals SET (name, type, breed, age, status,
+    admission_date, owner_id) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
+    values = [@name, @type, @breed, @age, @status, @admission_date, @owner_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -57,6 +55,13 @@ class Animal
   def self.find_by_id(id)
     sql = "SELECT * FROM animals WHERE id = $1"
     values = [id]
+    result = SqlRunner.run(sql, values).first
+    return Animal.new(result) if result
+  end
+
+  def self.find_by_admission_date(admission_date)
+    sql = "SELECT * FROM animals WHERE admission_date = $1"
+    values = [admission_date]
     result = SqlRunner.run(sql, values).first
     return Animal.new(result) if result
   end
