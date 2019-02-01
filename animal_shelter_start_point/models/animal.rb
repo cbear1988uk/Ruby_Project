@@ -19,4 +19,33 @@ class Animal
     @owner_id = options['owner_id'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO animals (name, type, breed, age, status, owner,
+    admission_date, owner_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+    RETURNING id"
+    values = [@name, @type, @breed, @age, @status, @owner,
+      @admission_date, @owner_id]
+    result = SqlRunner.run(sql, values)
+    @id = result[0]['id']
+  end
+
+  def update()
+    sql = "UPDATE animals SET (name, type, breed, age, status, owner,
+    admission_date, owner_id) = WHERE id = $9"
+    values = [@name, @type, @breed, @age, @status, @owner, @admission_date,
+      @owner_id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM students"
+    SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM students WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
 end
