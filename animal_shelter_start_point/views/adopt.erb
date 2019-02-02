@@ -1,1 +1,13 @@
-<p>Fill out application to adopt a pet</p>
+<p>Fill out application to adopt <%= @animals.name %>.</p>
+
+<form method="post" action="/owners/">
+  <label for="first-name">First Name:</label>
+    <input type="text" name="first_name" id="first-name"/>
+  <label for="last-name">Last Name:</label>
+    <input type="text" name="last_name" id="last-name"/>
+
+
+
+  <input type="submit" value="Submit Application"/>
+
+  <a href="/">Home</a>
