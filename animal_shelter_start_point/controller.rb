@@ -40,6 +40,12 @@ get '/adopt_pet/:id' do
   erb(:adopt)
 end
 
+post '/owners/' do
+  owners = Owner.new(params)
+  owners.save()
+  redirect '/owners/'
+end
+
 post '/animals/' do
   animals = Animal.new(params)
   animals.save()
