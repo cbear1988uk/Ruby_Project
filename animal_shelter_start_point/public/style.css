@@ -1,0 +1,45 @@
+* {
+background-color: #68baed;
+font-family: 'Nanum Gothic', sans-serif;
+text-decoration: none;
+}
+
+body h1 {
+  font-size: 40px;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 20px;
+  margin: 20px;
+  border: solid black 1px;
+  border-color: #68baed;
+  border-radius: 15px;
+  background-image: radial-gradient(#82ffff 5%, #b5e2ff 30%, #68baed 50%);
+  font-family: 'Indie Flower', cursive;
+  font-style: oblique;
+  color: #1e3342;
+}
+
+body a {
+  font-size: 20px;
+  padding: 20px;
+}
+
+
+
+body h2 {
+  text-align: center;
+  font-size: 50px;
+  padding: 75px;
+  font-family: 'Indie Flower', cursive;
+  background-image: url('/images/white_paw_print.png');
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body p {
+  text-align: left;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20;
+}
