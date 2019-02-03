@@ -1,3 +1,34 @@
-<p>edit</p>
+<p>Edit information for <%= "#{@animals.name}"%>;</p>
 
-<p>Name: <%= @animals.name %></p>
+<form method="post" action="/animals/">
+  <label for="pet-name">Pet Name:</label>
+    <input type="text" name="name" id="pet-name"/>
+
+  <label for="type-select">Select type of Animal:</label>
+    <select id="type-select" name="type">
+      <option value="Cat">Cat</option>
+      <option value="Dog">Dog</option>
+    </select>
+
+  <label for="pet-breed">Breed:</label>
+    <input type="text" name="breed" id="pet-breed"/>
+
+  <label for="pet-age">Pet age</label>
+    <input type="text" name="age" id="pet-age"/>
+
+  <label for="availability">Ready for adoption?</label>
+    <select id="availability" name="status">
+      <option value="Available">Available</option>
+      <option value="Reserved">Reserved</option>
+      <option value="Adopted">Adopted</option>
+    </select>
+
+  
+
+  <label for="date-added">Today's date</label>
+    <input type="text" name="admission_date" id="date-added"/>
+
+  <input type="submit" value="Add Pet"/>
+
+
+</form>

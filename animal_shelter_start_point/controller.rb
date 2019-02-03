@@ -60,5 +60,6 @@ end
 
 get '/edit_animal/:id' do
   @animals = Animal.find_by_id(params[:id])
+  @animals.update
   erb(:edit_animal)
 end
