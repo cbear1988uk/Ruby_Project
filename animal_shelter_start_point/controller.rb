@@ -58,6 +58,7 @@ post '/animals/:id/delete' do
  redirect to '/animals/'
 end
 
-get '/edit_animal/' do
+get '/edit_animal/:id' do
+  @animals = Animal.find_by_id(params[:id])
   erb(:edit_animal)
 end
