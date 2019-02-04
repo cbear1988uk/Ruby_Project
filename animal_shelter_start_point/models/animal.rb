@@ -66,7 +66,7 @@ class Animal
     values = ['Unavailable']
     result = SqlRunner.run(sql, values)
     animals = result.map{ |unavailable_animals| Animal.new(unavailable_animals)}
-    return animals 
+    return animals
   end
 
   def self.find_by_id(id)

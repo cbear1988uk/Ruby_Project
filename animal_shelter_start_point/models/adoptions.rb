@@ -41,15 +41,15 @@ class Adoption
   def self.find_all()
     sql = "SELECT * FROM adoptions"
     results = SqlRunner.run(sql)
-    houses = results.map{|row| Adoption.new(row)} if results
-    return houses
+    adoptions = results.map{|row| Adoption.new(row)} if results
+    return adoptions
   end
 
   def self.find_by_id(id)
     sql = "SELECT * FROM adoptions WHERE id = $1"
     values = [id]
     adoption_data = SqlRunner.run(sql, values).first
-    return House.new(adoption_data)
+    return Adoption.new(adoption_data)
   end
 
 end

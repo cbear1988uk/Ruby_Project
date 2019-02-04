@@ -116,3 +116,18 @@ get '/adoptions/' do
   @adoptions = Adoption.find_all
   erb(:adoption_owners)
 end
+
+get '/adoptions/new' do
+  @owners = Owner.find_all()
+  @animals = Animal.find_available_animals()
+  erb(:adoption_new)
+end
+
+post '/adoptions/' do
+  adoption = Adoption.new(params)
+  animal = Animal.find_by_id(params['animal_id'].to_i)
+  animal.status = 'Adopted!'
+  animal.update
+  adoption.save
+  redirect to '/adoptions/'
+end
