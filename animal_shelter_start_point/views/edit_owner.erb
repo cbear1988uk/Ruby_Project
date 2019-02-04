@@ -1,0 +1,15 @@
+<p>Edit information for <%= "#{@owners.first_name} #{@owners.last_name}"%>;</p>
+
+<form method="post" action="/owners/">
+  <label for="first-name">Change/Edit first name:</label>
+    <input type="text" name="first_name" id="first-name"/>
+
+  <label for="last-name">Change/Edit last name:</label>
+    <input type="text" name="last_name" id="last-name"/>
+
+  <input type="submit" value="Update Information"/>
+
+
+</form>
+
+<a href="/">Home</a>

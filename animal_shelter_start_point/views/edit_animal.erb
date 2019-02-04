@@ -1,10 +1,11 @@
 <p>Edit information for <%= "#{@animals.name}"%>;</p>
 
-<form method="post" action="/animals/">
-  <label for="pet-name">Pet Name:</label>
+<form method="update" action="/animals/">
+  <label for="pet-name">Change/Edit name:</label>
     <input type="text" name="name" id="pet-name"/>
 
-  <label for="type-select">Select type of Animal:</label>
+
+  <label for="type-select">Type of Animal:</label>
     <select id="type-select" name="type">
       <option value="Cat">Cat</option>
       <option value="Dog">Dog</option>
@@ -23,12 +24,14 @@
       <option value="Adopted">Adopted</option>
     </select>
 
-  
 
-  <label for="date-added">Today's date</label>
+<p>Original Admission Date: <%= @animals.admission_date %></p>
+  <label for="date-added">Change Admission Date:</label>
     <input type="text" name="admission_date" id="date-added"/>
 
-  <input type="submit" value="Add Pet"/>
+  <input type="submit" value="Update Information"/>
 
 
 </form>
+
+<a href="/">Home</a>

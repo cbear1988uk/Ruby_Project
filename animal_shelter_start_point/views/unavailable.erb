@@ -1,4 +1,4 @@
-<p>Animals</p>
+<p>Unavailable</p>
 
 <% @animals.each do |animal| %>
   <p>Name: <%= animal.name %></p>
@@ -7,10 +7,8 @@
   <p>Age: <%= animal.age %></p>
   <p>Status: <%= animal.status  %></p>
   <p>Admission Date: <%= animal.admission_date %></p>
-  <a href="/animals/<%= animal.id %>">Show Animal</a>
-
+  <a href="/unavailable/<%= animal.id %>">Show Animal</a>
 
 <% end %>
 
-<a href="/unavailable/">Show Unavailable Animals</a>
 <a href="/">Home</a>

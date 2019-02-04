@@ -1,4 +1,5 @@
 require_relative('./animal.rb')
+require_relative('./adoptions.rb')
 require_relative('../db/sql_runner.rb')
 
 class Owner
@@ -23,7 +24,7 @@ attr_accessor :first_name, :last_name, :pet, :animal_id
   def update()
     sql = "UPDATE owners SET (first_name, last_name)
     = ($1, $2) WHERE id = $3"
-    values = [@first_name, @last_name]
+    values = [@first_name, @last_name, @id]
     SqlRunner.run(sql, values)
   end
 

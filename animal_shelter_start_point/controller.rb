@@ -12,8 +12,13 @@ get '/' do
 end
 
 get '/animals/' do
-  @animals = Animal.find_all()
+  @animals = Animal.find_available_animals
   erb(:animals)
+end
+
+get '/unavailable/' do
+  @animals = Animal.find_unavailable_animals
+  erb(:unavailable)
 end
 
 get '/owners/' do
@@ -26,6 +31,11 @@ get '/animals/:id' do
   erb(:show_animal)
 end
 
+get '/unavailable/:id' do
+  @animals = Animal.find_by_id(params[:id])
+  erb(:show_unavailable_animal)
+end
+
 get '/edit_animal/:id' do
   @animals = Animal.find_by_id(params[:id])
   erb(:edit_animal)
@@ -33,6 +43,10 @@ end
 
 get '/donate_pet/' do
   erb(:new)
+end
+
+get '/add_new/' do
+  erb(:add_new_owner)
 end
 
 get '/adopt_pet/:id' do
@@ -46,6 +60,11 @@ post '/owners/' do
   redirect '/owners/'
 end
 
+get '/owners/:id' do
+  @owners = Owner.find_by_id(params[:id])
+  erb(:show_owners)
+end
+
 post '/animals/' do
   animals = Animal.new(params)
   animals.save()
@@ -53,7 +72,7 @@ post '/animals/' do
 end
 
 post '/animals/:id/delete' do
- @animal = Animal.find(params['id'])
+ @animal = Animal.find_by_id(params['id'])
  @animal.delete
  redirect to '/animals/'
 end
@@ -62,4 +81,28 @@ get '/edit_animal/:id' do
   @animals = Animal.find_by_id(params[:id])
   @animals.update
   erb(:edit_animal)
+end
+
+get '/edit_owner/:id' do
+  @owners = Owner.find_by_id(params[:id])
+  @owners.update
+  erb(:edit_owner)
+end
+
+get '/delete_animal/:id' do
+  @animals = Animal.find_by_id(params[:id])
+  @animals.update
+  erb(:delete_animal)
+end
+
+post '/owners/:id/delete' do
+ @owner = Owner.find_by_id(params['id'])
+ @owner.delete
+ redirect to '/owners/'
+end
+
+get '/delete_owner/:id' do
+  @owners = Owner.find_by_id(params[:id])
+  @owners.update
+  erb(:delete_owner)
 end

@@ -30,19 +30,19 @@ owner3.save()
 
 pet1 = Animal.new(
   {'name' => 'Titus', 'type' => 'Dog', 'breed' => 'Bulldog', 'age' => '3 years',
-   'status' => 'Reserved', 'admission_date' => '13/08/18', 'owner_id' => owner1.id}
+   'status' => 'Unavailable', 'admission_date' => '13/08/18', 'owner_id' => owner1.id}
 )
 pet1.save()
 
 pet2 = Animal.new(
   {'name' => 'Lewie', 'type' => 'Cat', 'breed' => 'Bengal', 'age' => '6 months',
-   'status' => 'Reserved', 'admission_date' => '15/07/18', 'owner_id' => owner2.id}
+   'status' => 'Unavailable', 'admission_date' => '15/07/18', 'owner_id' => owner2.id}
 )
 pet2.save()
 
 pet3 = Animal.new(
   {'name' => 'Kratos', 'type' => 'Cat', 'breed' => 'Maine Coon', 'age' => '1 year',
-   'status' => 'Reserved', 'admission_date' => '20/11/18', 'owner_id' => owner3.id}
+   'status' => 'Unavailable', 'admission_date' => '20/11/18', 'owner_id' => owner3.id}
 )
 pet3.save()
 

@@ -3,9 +3,10 @@
 <% @owners.each do |owner| %>
   <p>First Name: <%= owner.first_name %></p>
   <p>Last Name: <%= owner.last_name %></p>
-
+  <a href="/owners/<%= owner.id %>">Show Owner Information</a>
 
 
 <% end %>
 
+<a href="/add_new/">Add New Owner</a>
 <a href="/">Home</a>

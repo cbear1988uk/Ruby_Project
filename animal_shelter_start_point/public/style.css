@@ -40,6 +40,12 @@ body h2 {
 body p {
   text-align: left;
   font-size: 20px;
-  padding: 20px;
-  margin: 20;
+  padding: 40px;
+  margin: 40px;
+  border: 50px;
+  background-image: url('/images/cat_and_dog.jpg');
+  background-size: cover;
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: right;
 }

@@ -1,4 +1,5 @@
 require_relative('./owner.rb')
+require_relative('./adoptions.rb')
 require_relative('../db/sql_runner')
 
 class Animal
@@ -50,6 +51,22 @@ class Animal
     result = SqlRunner.run(sql)
     animals = result.map{ |animal_data| Animal.new(animal_data)}
     return animals
+  end
+
+  def self.find_available_animals()
+    sql = "SELECT * FROM animals WHERE status = $1"
+    values = ['Available']
+    result = SqlRunner.run(sql, values)
+    animals = result.map{ |available_animals| Animal.new(available_animals)}
+    return animals
+  end
+
+  def self.find_unavailable_animals()
+    sql = "SELECT * FROM animals WHERE status = $1"
+    values = ['Unavailable']
+    result = SqlRunner.run(sql, values)
+    animals = result.map{ |unavailable_animals| Animal.new(unavailable_animals)}
+    return animals 
   end
 
   def self.find_by_id(id)
