@@ -77,10 +77,10 @@ post '/animals/:id/delete' do
  redirect to '/animals/'
 end
 
-get '/edit_animal/:id' do
-  @animals = Animal.find_by_id(params[:id])
-  @animals.update
-  erb(:edit_animal)
+post '/edit_animal/:id' do
+  animals = Animal.new(params)
+  animals.update()
+  redirect "/animals/"
 end
 
 get '/edit_owner/:id' do

@@ -1,6 +1,6 @@
 <p>Edit information for <%= "#{@animals.name}"%>;</p>
 
-<form method="update" action="/animals/">
+<form method="post" action="/edit_animal/<%= @animals.id %>">
   <label for="pet-name">Change/Edit name:</label>
     <input type="text" name="name" id="pet-name"/>
 
