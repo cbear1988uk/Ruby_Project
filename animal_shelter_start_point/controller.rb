@@ -125,7 +125,7 @@ end
 
 post '/adoptions/' do
   adoption = Adoption.new(params)
-  animal = Animal.find_by_id(params['animal_id'].to_i)
+  animal = Animal.find_by_id(params['pet_id'].to_i)
   animal.status = 'Adopted!'
   animal.update
   adoption.save
