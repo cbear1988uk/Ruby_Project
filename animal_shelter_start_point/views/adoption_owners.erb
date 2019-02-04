@@ -2,13 +2,13 @@
 
 <% @adoptions.each do |adoption| %>
 
-<p>Owners: <%= adoption.owner_id %></p>
-<p>Animals: <%= adoption.animal_id %></p>
+<p>Owners: <%= adoption.get_owner_name %></p>
+<p>Animals: <%= adoption.get_pet_name %></p>
 
 <% end %>
 
 <form action="/adoptions/new" method="get">
-  <input type="submit" name="" value="new adoption">
+  <input type="submit" name="" value="New Adoption">
 </form>
 
 <a href="/">Home</a>

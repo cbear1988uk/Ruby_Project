@@ -52,4 +52,22 @@ class Adoption
     return Adoption.new(adoption_data)
   end
 
+  def get_owner_name()
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [@owner_id]
+    results = SqlRunner.run(sql, values)
+    owner_data = results.first
+    owner = Owner.new(owner_data)
+    return owner.last_name
+  end
+
+  def get_pet_name()
+    sql = "SELECT * FROM animals WHERE id = $1"
+    values = [@animal_id]
+    results = SqlRunner.run(sql, values)
+    animal_data = results.first
+    animal = Animal.new(animal_data)
+    return animal.name
+  end
+
 end
