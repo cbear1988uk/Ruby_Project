@@ -41,6 +41,11 @@ get '/edit_animal/:id' do
   erb(:edit_animal)
 end
 
+get '/edit_owner/:id' do
+  @owners = Owner.find_by_id(params[:id])
+  erb(:edit_owner)
+end
+
 get '/donate_pet/' do
   erb(:new)
 end
@@ -83,10 +88,10 @@ post '/edit_animal/:id' do
   redirect "/animals/"
 end
 
-get '/edit_owner/:id' do
-  @owners = Owner.find_by_id(params[:id])
-  @owners.update
-  erb(:edit_owner)
+post '/edit_owner/:id' do
+  owners = Owner.new(params)
+  owners.update()
+  redirect "/owners/"
 end
 
 get '/delete_animal/:id' do
@@ -105,4 +110,9 @@ get '/delete_owner/:id' do
   @owners = Owner.find_by_id(params[:id])
   @owners.update
   erb(:delete_owner)
+end
+
+get '/adoptions/' do
+  @adoptions = Adoption.find_all
+  erb(:adoption_owners)
 end

@@ -1,6 +1,6 @@
 <p>Edit information for <%= "#{@owners.first_name} #{@owners.last_name}"%>;</p>
 
-<form method="post" action="/owners/">
+<form method="post" action="/edit_owner/<%= @owners.id %>">
   <label for="first-name">Change/Edit first name:</label>
     <input type="text" name="first_name" id="first-name"/>
 
