@@ -1,0 +1,23 @@
+h1 {
+  font-family: 'Nanum Gothic', sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #68baed 35%, #5fefdc 75%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.content-container {
+  justify-content: flex-end;
+  text-align: left;
+  margin: 20px;
+  padding: 20px;
+}
+
+.link-container {
+  justify-content: space-evenly;
+  text-align: center;
+}

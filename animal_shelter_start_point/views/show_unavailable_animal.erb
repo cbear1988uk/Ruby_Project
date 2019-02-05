@@ -1,12 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_show_unavailable_animal.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<p>Name: <%= @animals.name %></p>
-<p>Type: <%= @animals.type %></p>
-<p>Breed: <%= @animals.breed %></p>
-<p>Age: <%= @animals.age %></p>
-<p>Status: <%= @animals.status %></p>
-<p>Admission Date: <%= @animals.admission_date %></p>
-<p>Description: <%= @animals.description %></p>
+<div class="content-container">
+    <p>Name: <%= @animals.name %></p>
+    <p>Type: <%= @animals.type %></p>
+    <p>Breed: <%= @animals.breed %></p>
+    <p>Age: <%= @animals.age %></p>
+    <p>Status: <%= @animals.status %></p>
+    <p>Admission Date: <%= @animals.admission_date %></p>
+    <p>Description: <%= @animals.description %></p>
+<div>
 
-<a href="/edit_animal/<%= @animals.id %>">Edit</a>
-<a href="/delete_animal/<%= @animals.id %>">Delete</a>
-<a href="/">Home</a>
+<div class="link-container">
+    <a href="/edit_animal/<%= @animals.id %>">Edit</a>
+    <a href="/delete_animal/<%= @animals.id %>">Delete</a>
+    <a href="/">Home</a>
+</div>
+
+  </body>
+</html>

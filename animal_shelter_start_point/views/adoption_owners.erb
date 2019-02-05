@@ -1,16 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_adoption_owners.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
+    <div class="content-container">
+    <% @adoptions.each do |adoption| %>
 
+    <p>Owners: <%= adoption.get_owner_name %></p>
+    <p>Animals: <%= adoption.get_pet_name %></p>
 
+    <% end %>
 
-<% @adoptions.each do |adoption| %>
+    <form action="/adoptions/new" method="get">
+      <input type="submit" name="" value="New Adoption">
+    </form>
+    </div>
 
-<p>Owners: <%= adoption.get_owner_name %></p>
-<p>Animals: <%= adoption.get_pet_name %></p>
+    <div class="link-container">
+    <a href="/">Home</a>
+    </div>
 
-<% end %>
-
-<form action="/adoptions/new" method="get">
-  <input type="submit" name="" value="New Adoption">
-</form>
-
-<a href="/">Home</a>
+  </body>
+</html>

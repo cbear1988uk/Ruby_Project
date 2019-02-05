@@ -1,7 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_show_owners.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<p>First Name: <%= @owners.first_name %></p>
-<p>Last Name: <%= @owners.last_name %></p>
+    <h1>First Name: <%= @owners.first_name %></h1>
+    <h1>Last Name: <%= @owners.last_name %></h1>
 
-<a href="/edit_owner/<%= @owners.id %>">Edit</a>
-<a href="/delete_owner/<%= @owners.id %>">Delete</a>
-<a href="/">Home</a>
+<div class="link-container">
+    <a href="/edit_owner/<%= @owners.id %>">Edit</a>
+    <a href="/delete_owner/<%= @owners.id %>">Delete</a>
+    <a href="/">Home</a>
+</div>
+
+  </body>
+</html>

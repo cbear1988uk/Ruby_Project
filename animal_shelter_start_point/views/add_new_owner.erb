@@ -1,16 +1,30 @@
-<p>Fill out form to donate your pet to our care</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_add_new_owner.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<form method="post" action="/owners/">
-  <label for="first-name">First Name:</label>
-    <input type="text" name="first_name" id="first-name"/>
-  <label for="last-name">Last Name:</label>
-    <input type="text" name="last_name" id="last-name"/>
+    <h1>Fill out form to donate your pet to our care</h1>
 
+<div class="content-container">
+    <form method="post" action="/owners/">
+      <label for="first-name">First Name:</label>
+        <input type="text" name="first_name" id="first-name"/>
+      <label for="last-name">Last Name:</label>
+        <input type="text" name="last_name" id="last-name"/>
+    <input type="submit" value="Add New Owner"/>
 
+    </form>
+</div>
 
-  <input type="submit" value="Add New Owner"/>
+<div class="link-container">
+    <a href="/">Home</a>
+</div>
 
-
-</form>
-
-<a href="/">Home</a>
+  </body>
+</html>

@@ -1,15 +1,32 @@
-<p>Edit information for <%= "#{@owners.first_name} #{@owners.last_name}"%>;</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_edit_owner.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<form method="post" action="/edit_owner/<%= @owners.id %>">
-  <label for="first-name">Change/Edit first name:</label>
-    <input type="text" name="first_name" id="first-name"/>
+    <h1>Edit information for <%= "#{@owners.first_name} #{@owners.last_name}"%>;</h1>
 
-  <label for="last-name">Change/Edit last name:</label>
-    <input type="text" name="last_name" id="last-name"/>
+<div class="content-container">
+    <form method="post" action="/edit_owner/<%= @owners.id %>">
+      <label for="first-name">Change/Edit first name:</label>
+        <input type="text" name="first_name" id="first-name"/>
 
-  <input type="submit" value="Update Information"/>
+      <label for="last-name">Change/Edit last name:</label>
+        <input type="text" name="last_name" id="last-name"/>
 
+      <input type="submit" value="Update Information"/>
 
-</form>
+    </form>
+</div>
 
-<a href="/">Home</a>
+<div class="link-container">
+    <a href="/">Home</a>
+</div>
+
+  </body>
+</html>

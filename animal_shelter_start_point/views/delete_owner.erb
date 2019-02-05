@@ -1,7 +1,27 @@
-<p>Are you sure you want to delete <%= "#{@owners.first_name} #{@owners.last_name}"%> from the database?</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_delete_owner.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<form action="/owners/<%= @owners.id %>/delete" method="POST">
-  <input class="Yes?" type="submit" value="delete" />
-</form>
+    <h1>Are you sure you want to delete <%= "#{@owners.first_name} #{@owners.last_name}"%> from the database?</h1>
 
-<a href="/">Home</a>
+
+<div class="content-container">
+    <form action="/owners/<%= @owners.id %>/delete" method="POST">
+      <input class="Yes?" type="submit" value="delete" />
+    </form>
+</div>
+
+<div class="link-container">
+    <a href="/">Home</a>
+</div>
+
+
+  </body>
+</html>

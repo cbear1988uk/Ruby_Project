@@ -1,14 +1,33 @@
-<p>Unavailable</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_show_unavailable.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<% @animals.each do |animal| %>
-  <p>Name: <%= animal.name %></p>
-  <p>Type: <%= animal.type %></p>
-  <p>Breed: <%= animal.breed %></p>
-  <p>Age: <%= animal.age %></p>
-  <p>Status: <%= animal.status  %></p>
-  <p>Admission Date: <%= animal.admission_date %></p>
-  <a href="/unavailable/<%= animal.id %>">Show Animal</a>
+    <h1>Unavailable</h1>
 
-<% end %>
+<div class="content-container">
+    <% @animals.each do |animal| %>
+      <p>Name: <%= animal.name %></p>
+      <p>Type: <%= animal.type %></p>
+      <p>Breed: <%= animal.breed %></p>
+      <p>Age: <%= animal.age %></p>
+      <p>Status: <%= animal.status  %></p>
+      <p>Admission Date: <%= animal.admission_date %></p>
+      <a href="/unavailable/<%= animal.id %>">Show Animal</a>
 
-<a href="/">Home</a>
+    <% end %>
+</div>
+
+<div class="link-container">
+    <a href="/">Home</a>
+</div>
+
+
+  </body>
+</html>

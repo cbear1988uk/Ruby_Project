@@ -1,17 +1,33 @@
-<form action="/adoptions/" method="post">
-  <label for="owner-select">Owners</label>
-    <select class="" name="owner_id">
-      <% for owner in @owners %>
-      <option value="<%= owner.id %>"><%= owner.first_name %></option>
-      <%end %>
-    </select>
-  <label for="pet-select">Pets</label>
-    <select class="" name="animal_id">
-      <% for animal in @animals %>
-      <option value="<%= animal.id %>"><%= animal.name %></option>
-      <% end %>
-    </select>
-  <input type="submit" name="" value="Adopt">
-</form>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_adoption_new.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<a href="/">Home</a>
+    <form action="/adoptions/" method="post">
+      <label for="owner-select">Owners</label>
+        <select class="" name="owner_id">
+          <% for owner in @owners %>
+          <option value="<%= owner.id %>"><%= owner.first_name %></option>
+          <%end %>
+        </select>
+      <label for="pet-select">Pets</label>
+        <select class="" name="animal_id">
+          <% for animal in @animals %>
+          <option value="<%= animal.id %>"><%= animal.name %></option>
+          <% end %>
+        </select>
+      <input type="submit" name="" value="Adopt">
+    </form>
+
+<div class="link-container">
+    <a href="/">Home</a>
+</div>
+
+  </body>
+</html>
