@@ -1,13 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_show_animal.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<p>Name: <%= @animals.name %></p>
-<p>Type: <%= @animals.type %></p>
-<p>Breed: <%= @animals.breed %></p>
-<p>Age: <%= @animals.age %></p>
-<p>Status: <%= @animals.status %></p>
-<p>Admission Date: <%= @animals.admission_date %></p>
+    <h1><%= @animals.name %></h1>
+    <div class="content-container">
+      <p>Type: <%= @animals.type %></p>
+      <p>Breed: <%= @animals.breed %></p>
+      <p>Age: <%= @animals.age %></p>
+      <p>Status: <%= @animals.status %></p>
+      <p>Admission Date: <%= @animals.admission_date %></p>
+      <p>description: <%= @animals.description %></p>
+      <p> <%= @animals.url %> </p>
+    </div>
 
-<a href="/adopt_pet/<%= @animals.id %>">Adopt this pet</a>
 
-<a href="/edit_animal/<%= @animals.id %>">Edit</a>
-<a href="/delete_animal/<%= @animals.id %>">Delete</a>
-<a href="/">Home</a>
+    <h2><div class="link-container">
+      <a href="/adopt_pet/<%= @animals.id %>">Adopt this pet</a>
+      <a href="/edit_animal/<%= @animals.id %>">Edit</a>
+      <a href="/delete_animal/<%= @animals.id %>">Delete</a>
+      <a href="/">Home</a>
+        </div>
+    <h2>
+
+  </body>
+</html>

@@ -17,7 +17,9 @@ CREATE TABLE animals (
   age VARCHAR(255),
   status VARCHAR(255),
   owner_id INT4,
-  admission_date VARCHAR(255)
+  admission_date VARCHAR(255),
+  description VARCHAR(255),
+  url VARCHAR(255)
 );
 
 CREATE TABLE adoptions (

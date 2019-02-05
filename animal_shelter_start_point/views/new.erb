@@ -1,33 +1,55 @@
-<p>Fill out form to donate your pet to our care</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style_animals.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <title>RMAS</title>
+  </head>
+  <body>
 
-<form method="post" action="/animals/">
-  <label for="pet-name">Pet Name:</label>
-    <input type="text" name="name" id="pet-name"/>
-
-  <label for="type-select">Select type of Animal:</label>
-    <select id="type-select" name="type">
-      <option value="Cat">Cat</option>
-      <option value="Dog">Dog</option>
-    </select>
-
-  <label for="pet-breed">Breed:</label>
-    <input type="text" name="breed" id="pet-breed"/>
-
-  <label for="pet-age">Pet age</label>
-    <input type="text" name="age" id="pet-age"/>
-
-  <label for="availability">Ready for adoption?</label>
-    <select id="availability" name="status">
-      <option value="Available">Available</option>
-      <option value="Reserved">Reserved</option>
-    </select>
-
-  <label for="date-added">Today's date</label>
-    <input type="text" name="admission_date" id="date-added"/>
-
-  <input type="submit" value="Add Pet"/>
+    <h1>Fill out form to donate your pet to our care</h1>
 
 
-</form>
+    <div class="content-container">
+    <form method="post" action="/animals/">
+      <label for="pet-name">Pet Name:</label>
+        <input type="text" name="name" id="pet-name"/>
 
-<a href="/">Home</a>
+      <label for="type-select">Select type of Animal:</label>
+        <select id="type-select" name="type">
+          <option value="Cat">Cat</option>
+          <option value="Dog">Dog</option>
+        </select>
+
+      <label for="pet-breed">Breed:</label>
+        <input type="text" name="breed" id="pet-breed"/>
+
+      <label for="pet-age">Pet age</label>
+        <input type="text" name="age" id="pet-age"/>
+
+      <textarea name="description" rows="10" cols="30">Short Description</textarea>
+
+      <label for="availability">Ready for adoption?</label>
+        <select id="availability" name="status">
+          <option value="Available">Available</option>
+          <option value="Reserved">Reserved</option>
+        </select>
+
+
+
+      <label for="date-added">Today's date</label>
+        <input type="text" name="admission_date" id="date-added"/>
+
+      <input type="submit" value="Add Pet"/>
+      </form>
+      </div>
+
+    <div class="link-container">
+    <a href="/">Home</a>
+    </div>
+
+
+  </body>
+</html>

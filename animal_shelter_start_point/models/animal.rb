@@ -6,7 +6,7 @@ class Animal
 
   attr_reader :id
   attr_accessor :name, :type, :breed, :age,
-  :status, :owner, :admission_date, :owner_id
+  :status, :owner, :admission_date, :owner_id, :description, :url
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -17,21 +17,23 @@ class Animal
     @status = options['status']
     @admission_date = options['admission_date']
     @owner_id = options['owner_id'].to_i
+    @description = options['description']
+    @url = options['url']
   end
 
   def save()
     sql = "INSERT INTO animals (name, type, breed, age, status,
-    admission_date, owner_id) VALUES ($1, $2, $3, $4, $5, $6, $7)
+    admission_date, owner_id, description, url) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
     RETURNING id"
-    values = [@name, @type, @breed, @age, @status, @admission_date, @owner_id]
+    values = [@name, @type, @breed, @age, @status, @admission_date, @owner_id, @description, @url]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id']
   end
 
   def update()
     sql = "UPDATE animals SET (name, type, breed, age, status,
-    admission_date, owner_id) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
-    values = [@name, @type, @breed, @age, @status, @admission_date, @owner_id, @id]
+    admission_date, owner_id, description, url) = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10"
+    values = [@name, @type, @breed, @age, @status, @admission_date, @owner_id, @description, @url, @id]
     SqlRunner.run(sql, values)
   end
 
