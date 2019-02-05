@@ -5,6 +5,7 @@ text-decoration: none;
 }
 
 body h1 {
+  text-shadow: 3px 3px #a0beef;
   font-size: 40px;
   justify-content: flex-end;
   text-align: right;
@@ -27,6 +28,7 @@ body a {
 
 
 body h2 {
+  text-shadow: 3px 3px #a0beef;
   text-align: center;
   font-size: 50px;
   padding: 75px;
@@ -38,13 +40,17 @@ body h2 {
 }
 
 body p {
-  text-align: left;
+  text-indent: 50px;
+  float: left;
   font-size: 20px;
-  padding: 40px;
-  margin: 40px;
-  border: 50px;
+  padding: 10px;
+  margin-right: 600px;
+  border: 30px;
+}
+
+div {
   background-image: url('/images/cat_and_dog.jpg');
-  background-size: cover;
+  background-size: contain;
   background-size: 500px;
   background-repeat: no-repeat;
   background-position: right;
