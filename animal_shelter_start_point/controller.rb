@@ -62,7 +62,7 @@ end
 post '/owners/' do
   owners = Owner.new(params)
   owners.save()
-  redirect '/owners/'
+  redirect '/adoptions/new'
 end
 
 get '/owners/:id' do
