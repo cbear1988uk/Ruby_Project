@@ -9,10 +9,16 @@
   </head>
   <body>
 
-    <h1>Unavailable</h1>
+    <h1>Animals in Training</h1>
 
-<div class="content-container">
+    <p>Below is a list of animals who are unavailable for what could be several
+    reasons. Some animals simply are too young for adoption, some are still
+    needing necessary training and/or vaccinations, while others may be reserved
+    for someone who is interested in adopting them.</p>
+
+<div class="animal-container">
     <% @animals.each do |animal| %>
+    <div class="content-container">
       <p>Name: <%= animal.name %></p>
       <p>Type: <%= animal.type %></p>
       <p>Breed: <%= animal.breed %></p>
@@ -20,7 +26,7 @@
       <p>Status: <%= animal.status  %></p>
       <p>Admission Date: <%= animal.admission_date %></p>
       <a href="/unavailable/<%= animal.id %>">Show Animal</a>
-
+    </div>
     <% end %>
 </div>
 

@@ -31,6 +31,7 @@ body h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid black 1px;
 }
 
 .single-animal-container {
@@ -50,6 +51,9 @@ body h1 {
 }
 
 .link-container {
-  justify-content: space-evenly;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 40px;
   text-align: center;
+  justify-content: space-around;
 }
