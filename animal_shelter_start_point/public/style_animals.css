@@ -5,6 +5,9 @@ text-decoration: none;
 
 body {
   background-image: linear-gradient(to bottom right, #68baed 35%, #5fefdc 75%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 body h1 {
@@ -55,5 +58,6 @@ body h1 {
   font-weight: bold;
   padding: 40px;
   text-align: center;
+  display: flex;
   justify-content: space-around;
 }
