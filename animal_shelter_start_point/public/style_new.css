@@ -11,15 +11,37 @@ html {
 }
 
 .content-container {
-  justify-content: flex-end;
-  text-align: left;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
   margin: 20px;
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  background-image: url('/images/cat_and_dog_6.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  border: solid black 1px;
+}
+
+.alignment-container {
+  margin: 50px;
+  font-weight: bold;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border: solid black 2px;
+  border-radius: 50px;
+  width: 500px;
+  opacity: 0.9;
+  overflow: scroll;
+  content: normal;
+  align-items: center;
 }
 
 .link-container {
+  font-size: 25px;
   justify-content: space-evenly;
   text-align: center;
 }

@@ -46,11 +46,10 @@ body h1 {
   border: solid black 2px;
   border-radius: 50px;
   width: 500px;
-  opacity: 0.5;
+  opacity: 0.7;
   overflow: scroll;
   content: normal;
   align-items: center;
-  display: flex;
 }
 
 .link-container {

@@ -4,6 +4,8 @@ h1 {
 }
 
 body {
+  font-size: 35px;
+  padding: 20px;
   background-image: linear-gradient(to bottom right, #68baed 35%, #5fefdc 75%);
   background-size: cover;
   background-repeat: no-repeat;

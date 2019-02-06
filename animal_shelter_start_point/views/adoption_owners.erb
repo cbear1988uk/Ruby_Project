@@ -9,12 +9,14 @@
   </head>
   <body>
 
+    <h1>Adoptions</h1>
+
     <div class="content-container">
     <% @adoptions.each do |adoption| %>
-
-    <p>Owners: <%= adoption.get_owner_name %></p>
-    <p>Animals: <%= adoption.get_pet_name %></p>
-
+      <div class="single-content-container">
+      <p>Owners: <%= adoption.get_owner_name %></p>
+      <p>Animals: <%= adoption.get_pet_name %></p>
+      </div>
     <% end %>
 
     <form action="/adoptions/new" method="get">

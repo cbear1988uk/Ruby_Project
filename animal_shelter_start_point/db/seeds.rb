@@ -31,7 +31,7 @@ owner3.save()
 pet1 = Animal.new(
   {'name' => 'Titus', 'type' => 'Dog', 'breed' => 'Bulldog', 'age' => '3 years',
    'status' => 'Unavailable', 'admission_date' => '13/08/18', 'description' =>
-   'Titus is a great dog who loves to play fetch.','url' => "/images/bulldog.jpg" 'owner_id' => owner1.id}
+   'Titus is a great dog who loves to play fetch.','url' => "/images/bulldog.jpg", 'owner_id' => owner1.id}
 )
 pet1.save()
 

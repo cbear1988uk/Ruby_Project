@@ -14,10 +14,11 @@
 
     <div class="content-container">
     <% @owners.each do |owner| %>
+    <div class="single-owner-container">
       <p>First Name: <%= owner.first_name %></p>
       <p>Last Name: <%= owner.last_name %></p>
       <a href="/owners/<%= owner.id %>">Show Owner Information</a>
-
+    </div>
 
     <% end %>
     </div>

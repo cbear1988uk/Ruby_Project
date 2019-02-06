@@ -25,7 +25,7 @@ body p {
 }
 
 .animal-container {
-  font-size: 15px;
+  font-size: 17px;
   background-image: url('/images/cat_and_dog_3.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -47,14 +47,16 @@ body p {
   border: solid black 2px;
   border-radius: 50px;
   width: 500px;
-  opacity: 0.5;
+  opacity: 0.7;
   overflow: scroll;
   content: normal;
   align-items: center;
-  display: flex;
+
 }
 
 .link-container {
+  padding: 15px;
+  font-size: 25px;
   justify-content: space-evenly;
   text-align: center;
 }

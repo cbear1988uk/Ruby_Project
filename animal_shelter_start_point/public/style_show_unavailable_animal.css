@@ -15,6 +15,8 @@ body {
 }
 
 .link-container {
+  font-size: 20px;
+  padding: 15px;
   justify-content: space-evenly;
   text-align: center;
 }

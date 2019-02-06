@@ -1,6 +1,15 @@
-h1 {
-  font-family: 'Nanum Gothic', sans-serif;
-  text-decoration: none;
+body h1 {
+  font-size: 50px;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+  text-shadow: 3px 3px #a0beef;
+  padding: 20px;
+  border: solid 3px;
+  border-color: #black;
+  border-radius: 15px;
+  background-image: radial-gradient(#82ffff 5%, #b5e2ff 30%, #68baed 50%);
+  font-style: oblique;
+  color: #1e3342;
 }
 
 html {
@@ -15,6 +24,31 @@ html {
   text-align: left;
   margin: 20px;
   padding: 20px;
+  font-size: 15px;
+  background-image: url('/images/cat_and_dog_4.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid black 1px;
+}
+
+.single-owner-container {
+  font-weight: bold;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  border: solid black 2px;
+  border-radius: 50px;
+  width: 500px;
+  opacity: 0.5;
+  overflow: scroll;
+  content: normal;
+  align-items: center;
 }
 
 .link-container {
