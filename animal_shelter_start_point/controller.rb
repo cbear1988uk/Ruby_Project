@@ -106,6 +106,13 @@ post '/owners/:id/delete' do
  redirect to '/owners/'
 end
 
+# post to the url do
+#   find owners by their id
+#   take that specific owner and update his info in the db
+#   apply it to where that information is
+# end
+
+
 get '/delete_owner/:id' do
   @owners = Owner.find_by_id(params[:id])
   @owners.update
