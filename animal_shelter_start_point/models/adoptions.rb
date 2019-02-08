@@ -58,7 +58,7 @@ class Adoption
     results = SqlRunner.run(sql, values)
     owner_data = results.first
     owner = Owner.new(owner_data)
-    return owner.last_name
+    return owner.first_name + " " + owner.last_name
   end
 
   def get_pet_name()
